@@ -4,6 +4,20 @@ import './App.css'
 function App() {
   const [sidebarOpen, setSidebarOpen] = useState(false)
 
+  const scrollToSection = (sectionId) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      const headerHeight = 50; // Match --header-height
+      const elementTop = element.offsetTop - headerHeight;
+      
+      window.scrollTo({
+        top: elementTop,
+        behavior: 'smooth'
+      });
+    }
+    setSidebarOpen(false);
+  };
+
   return (
     <>
       {/* Sidebar Overlay */}
@@ -11,13 +25,13 @@ function App() {
       
              {/* Sidebar */}
              <div className={`sidebar ${sidebarOpen ? 'sidebar-open' : ''}`}>
-               <nav className="sidebar-nav">
-                 <a href="#home" className="sidebar-link" onClick={() => setSidebarOpen(false)}>About</a>
-                 <a href="#projects" className="sidebar-link" onClick={() => setSidebarOpen(false)}>Projects</a>
-                 <a href="#publications" className="sidebar-link" onClick={() => setSidebarOpen(false)}>Publications</a>
-                 <a href="#skills" className="sidebar-link" onClick={() => setSidebarOpen(false)}>Skills</a>
-                 <a href="#misc" className="sidebar-link" onClick={() => setSidebarOpen(false)}>Misc</a>
-               </nav>
+        <nav className="sidebar-nav">
+          <button className="sidebar-link" onClick={() => scrollToSection('home')}>About</button>
+          <button className="sidebar-link" onClick={() => scrollToSection('projects')}>Projects</button>
+          <button className="sidebar-link" onClick={() => scrollToSection('publications')}>Publications</button>
+          <button className="sidebar-link" onClick={() => scrollToSection('skills')}>Skills</button>
+          <button className="sidebar-link" onClick={() => scrollToSection('misc')}>Misc</button>
+        </nav>
              </div>
 
       <header className="header-bar">
@@ -62,25 +76,35 @@ function App() {
             </div>
           </div>
         </section>
+        <br/>
 
         <section id="projects" className="content-section">
           <h1>Projects</h1>
-          <p>This is the about section. Add your personal information, background, and story here.</p>
+          <p>Alpha beta charlie foxtrot lima</p>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
         </section>
+        <br/>
 
         <section id="publications" className="content-section">
           <h1>Publications</h1>
-          <p>This is the projects section. Showcase your work, portfolio items, and achievements here.</p>
+          <p>This is the publications section. Showcase your work, portfolio items, and achievements here.</p>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
         </section>
+        <br/>
 
         <section id="skills" className="content-section">
           <h1>Skills</h1>
           <p>This is the contact section. Add your contact information and ways to reach you here.</p>
         </section>
+        <br/>
 
         <section id="misc" className="content-section">
           <h1>Misc</h1>
           <p>This is the misc section. Add your misc information here.</p>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
         </section>
       </div>
     </>

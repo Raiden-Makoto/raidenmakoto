@@ -120,11 +120,17 @@
 
 .sidebar-link {
   display: block;
+  width: 100%;
   color: white;
   text-decoration: none;
   padding: 1rem 1.5rem;
   font-size: 1.1rem;
   font-weight: 300;
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  font-family: inherit;
   transition: font-weight 0.2s ease, transform 0.2s ease;
 }
 
@@ -139,7 +145,6 @@
 }
 
 .content-section {
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -209,12 +214,43 @@
   color: white;
   font-weight: 300;
   background-color: #a878cc;
-  padding: 0.5rem 1rem;
+  padding: 0;
+  min-height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 100%;
   text-align: center;
   position: sticky;
   top: var(--header-height);
   z-index: 999;
+  margin-bottom: 0;
+}
+
+.content-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  text-align: center;
+  padding: 0;
+  width: 100%;
+}
+
+.content-section > *:not(h1) {
+  margin-top: 2rem;
+  padding: 0 2rem;
+  max-width: 1200px;
+  width: 100%;
+}
+
+.content-section p {
+  margin: 0;
+  padding: 0;
+}
+
+#home {
+  padding: 0;
 }
 
 .content-section h2 {
@@ -230,6 +266,7 @@
   line-height: 1.6;
   font-weight: 300;
   margin-top: 1rem;
+  padding: 0 2rem;
 }
 
  
