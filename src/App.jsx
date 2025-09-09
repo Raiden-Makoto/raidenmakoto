@@ -5,12 +5,35 @@ import './App.css'
 
 function App() {
   const [count, setCount] = useState(0)
+  const [sidebarOpen, setSidebarOpen] = useState(false)
 
   return (
     <>
+      {/* Sidebar Overlay */}
+      {sidebarOpen && <div className="sidebar-overlay" onClick={() => setSidebarOpen(false)}></div>}
+      
+      {/* Sidebar */}
+      <div className={`sidebar ${sidebarOpen ? 'sidebar-open' : ''}`}>
+        <nav className="sidebar-nav">
+          <a href="#home" className="sidebar-link">Home</a>
+          <a href="#about" className="sidebar-link">About</a>
+          <a href="#projects" className="sidebar-link">Projects</a>
+          <a href="#contact" className="sidebar-link">Contact</a>
+        </nav>
+      </div>
+
       <header className="header-bar">
         <div className="header-content">
-          <h2>My React App</h2>
+          <div className="header-left">
+            <button className="hamburger-menu" onClick={() => setSidebarOpen(!sidebarOpen)}>
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                <line x1="3" y1="6" x2="21" y2="6"></line>
+                <line x1="3" y1="12" x2="21" y2="12"></line>
+                <line x1="3" y1="18" x2="21" y2="18"></line>
+              </svg>
+            </button>
+            <h2>Raiden Makoto</h2>
+          </div>
           <div className="social-icons">
             <a href={import.meta.env.VITE_LINKEDIN_URL || '#'} target="_blank" rel="noopener noreferrer" className="social-icon">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">

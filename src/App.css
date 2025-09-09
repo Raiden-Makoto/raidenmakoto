@@ -1,9 +1,15 @@
+:root {
+  --header-height: 50px; /* Define header height */
+}
+
 .header-bar {
   background-color: #a878cc;
   color: white;
-  padding: 0.5rem 0;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   margin-bottom: 2rem;
+  height: var(--header-height);
+  display: flex;
+  align-items: center;
 }
 
 .header-content {
@@ -13,6 +19,35 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  width: 100%;
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.hamburger-menu {
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  padding: 0.25rem;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.2s ease;
+}
+
+.hamburger-menu:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.hamburger-menu:focus {
+  outline: 2px solid rgba(255, 255, 255, 0.5);
+  outline-offset: 2px;
 }
 
 .header-bar h2 {
@@ -41,6 +76,54 @@
 .social-icon:hover {
   background-color: rgba(255, 255, 255, 0.1);
   opacity: 0.8;
+}
+
+/* Sidebar Styles */
+.sidebar-overlay {
+  position: fixed;
+  top: var(--header-height); /* Start right at bottom of header */
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 998;
+}
+
+.sidebar {
+  position: fixed;
+  top: var(--header-height); /* Start right at bottom of header */
+  left: 0;
+  height: calc(100vh - var(--header-height)); /* Subtract only header height */
+  width: 200px;
+  background-color: #a878cc;
+  color: white;
+  z-index: 999;
+  transform: translateX(-100%);
+  transition: transform 0.3s ease-in-out;
+}
+
+.sidebar-open {
+  transform: translateX(0);
+}
+
+.sidebar-nav {
+  padding: 1rem 0;
+}
+
+.sidebar-link {
+  display: block;
+  color: white;
+  text-decoration: none;
+  padding: 1rem 1.5rem;
+  font-size: 1.1rem;
+  font-weight: 300;
+  transition: font-weight 0.2s ease, transform 0.2s ease;
+}
+
+.sidebar-link:hover {
+  color: white;
+  font-weight: 700;
+  transform: scale(1.05);
 }
 
 .main-content {
