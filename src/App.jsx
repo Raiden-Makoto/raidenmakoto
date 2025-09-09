@@ -12,10 +12,11 @@ function App() {
              {/* Sidebar */}
              <div className={`sidebar ${sidebarOpen ? 'sidebar-open' : ''}`}>
                <nav className="sidebar-nav">
-                 <a href="#home" className="sidebar-link" onClick={() => setSidebarOpen(false)}>Home</a>
-                 <a href="#about" className="sidebar-link" onClick={() => setSidebarOpen(false)}>About</a>
+                 <a href="#home" className="sidebar-link" onClick={() => setSidebarOpen(false)}>About</a>
                  <a href="#projects" className="sidebar-link" onClick={() => setSidebarOpen(false)}>Projects</a>
-                 <a href="#contact" className="sidebar-link" onClick={() => setSidebarOpen(false)}>Contact</a>
+                 <a href="#publications" className="sidebar-link" onClick={() => setSidebarOpen(false)}>Publications</a>
+                 <a href="#skills" className="sidebar-link" onClick={() => setSidebarOpen(false)}>Skills</a>
+                 <a href="#misc" className="sidebar-link" onClick={() => setSidebarOpen(false)}>Misc</a>
                </nav>
              </div>
 
@@ -47,23 +48,39 @@ function App() {
       </header>
       <div className="main-content">
         <section id="home" className="content-section">
-          <h1>Home</h1>
-          <p>Welcome to my portfolio website.</p>
-        </section>
-
-        <section id="about" className="content-section">
-          <h1>About</h1>
-          <p>This is the about section. Add your personal information, background, and story here.</p>
+          <h1>About Me</h1>
+          <div className="about-content">
+            <div className="about-image">
+              <div className="circular-frame">
+                <img src="/raiden.webp" alt="Profile" />
+              </div>
+            </div>
+            <div className="about-text">
+              <h2>Raiden Makoto</h2>
+              <p>{import.meta.env.VITE_EDUCATION}</p>
+              <p>{import.meta.env.VITE_HOBBIES}</p>
+            </div>
+          </div>
         </section>
 
         <section id="projects" className="content-section">
           <h1>Projects</h1>
+          <p>This is the about section. Add your personal information, background, and story here.</p>
+        </section>
+
+        <section id="publications" className="content-section">
+          <h1>Publications</h1>
           <p>This is the projects section. Showcase your work, portfolio items, and achievements here.</p>
         </section>
 
-        <section id="contact" className="content-section">
-          <h1>Contact</h1>
+        <section id="skills" className="content-section">
+          <h1>Skills</h1>
           <p>This is the contact section. Add your contact information and ways to reach you here.</p>
+        </section>
+
+        <section id="misc" className="content-section">
+          <h1>Misc</h1>
+          <p>This is the misc section. Add your misc information here.</p>
         </section>
       </div>
     </>
