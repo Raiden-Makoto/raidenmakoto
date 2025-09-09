@@ -1,10 +1,7 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
 
 function App() {
-  const [count, setCount] = useState(0)
   const [sidebarOpen, setSidebarOpen] = useState(false)
 
   return (
@@ -12,15 +9,15 @@ function App() {
       {/* Sidebar Overlay */}
       {sidebarOpen && <div className="sidebar-overlay" onClick={() => setSidebarOpen(false)}></div>}
       
-      {/* Sidebar */}
-      <div className={`sidebar ${sidebarOpen ? 'sidebar-open' : ''}`}>
-        <nav className="sidebar-nav">
-          <a href="#home" className="sidebar-link">Home</a>
-          <a href="#about" className="sidebar-link">About</a>
-          <a href="#projects" className="sidebar-link">Projects</a>
-          <a href="#contact" className="sidebar-link">Contact</a>
-        </nav>
-      </div>
+             {/* Sidebar */}
+             <div className={`sidebar ${sidebarOpen ? 'sidebar-open' : ''}`}>
+               <nav className="sidebar-nav">
+                 <a href="#home" className="sidebar-link" onClick={() => setSidebarOpen(false)}>Home</a>
+                 <a href="#about" className="sidebar-link" onClick={() => setSidebarOpen(false)}>About</a>
+                 <a href="#projects" className="sidebar-link" onClick={() => setSidebarOpen(false)}>Projects</a>
+                 <a href="#contact" className="sidebar-link" onClick={() => setSidebarOpen(false)}>Contact</a>
+               </nav>
+             </div>
 
       <header className="header-bar">
         <div className="header-content">
@@ -49,26 +46,25 @@ function App() {
         </div>
       </header>
       <div className="main-content">
-        <div>
-          <a href="https://vite.dev" target="_blank">
-            <img src={viteLogo} className="logo" alt="Vite logo" />
-          </a>
-          <a href="https://react.dev" target="_blank">
-            <img src={reactLogo} className="logo react" alt="React logo" />
-          </a>
-        </div>
-        <h1>Vite + React</h1>
-        <div className="card">
-          <button onClick={() => setCount((count) => count + 1)}>
-            count is {count}
-          </button>
-          <p>
-            Edit <code>src/App.jsx</code> and save to test HMR
-          </p>
-        </div>
-        <p className="read-the-docs">
-          Click on the Vite and React logos to learn more
-        </p>
+        <section id="home" className="content-section">
+          <h1>Home</h1>
+          <p>Welcome to my portfolio website.</p>
+        </section>
+
+        <section id="about" className="content-section">
+          <h1>About</h1>
+          <p>This is the about section. Add your personal information, background, and story here.</p>
+        </section>
+
+        <section id="projects" className="content-section">
+          <h1>Projects</h1>
+          <p>This is the projects section. Showcase your work, portfolio items, and achievements here.</p>
+        </section>
+
+        <section id="contact" className="content-section">
+          <h1>Contact</h1>
+          <p>This is the contact section. Add your contact information and ways to reach you here.</p>
+        </section>
       </div>
     </>
   )
