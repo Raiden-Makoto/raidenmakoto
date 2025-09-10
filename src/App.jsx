@@ -3,6 +3,23 @@ import './App.css'
 
 function App() {
   const [sidebarOpen, setSidebarOpen] = useState(false)
+  const scannedPdfs = Object.entries(
+    import.meta.glob('./assets/pubs/*.pdf', { eager: true, query: '?url', import: 'default' })
+  ).map(([path, url]) => {
+    const file = path.split('/').pop() || ''
+    const name = file.replace(/\.pdf$/i, '')
+    return { name, url }
+  })
+  // Hard-code order: 24, 23, JEI; others follow
+  const order = ['qce24paper', 'qce23abstract', 'jeipaper']
+  const rank = (n) => {
+    const i = order.indexOf(n.toLowerCase())
+    return i === -1 ? Number.MAX_SAFE_INTEGER : i
+  }
+  const sortedPdfs = [...scannedPdfs].sort((a, b) => rank(a.name) - rank(b.name))
+
+  const [pdfFiles] = useState(sortedPdfs)
+  const [activePdfUrl, setActivePdfUrl] = useState(sortedPdfs[0]?.url || '')
 
   const scrollToSection = (sectionId) => {
     const element = document.getElementById(sectionId);
@@ -87,8 +104,25 @@ function App() {
 
         <section id="publications" className="content-section">
           <h1>Publications</h1>
-          <p>This is the publications section. Showcase your work, portfolio items, and achievements here.</p>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+          <div className="pdf-viewer">
+            <div className="pdf-sidebar">
+              <ul className="pdf-list">
+                {pdfFiles.length === 0 && <li className="pdf-empty">No PDFs loaded yet</li>}
+                {pdfFiles.map((file) => (
+                  <li key={file.url} className={`pdf-item ${activePdfUrl === file.url ? 'active' : ''}`} onClick={() => setActivePdfUrl(file.url)}>
+                    <span className="pdf-name">{file.name}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div className="pdf-content">
+              {activePdfUrl ? (
+                <iframe title="pdf" src={activePdfUrl} className="pdf-frame" />
+              ) : (
+                <div className="pdf-placeholder">Select or upload a PDF from the left</div>
+              )}
+            </div>
+          </div>
         </section>
         <br/>
 
@@ -165,6 +199,10 @@ function App() {
                 <li>
                   Jupyter
                   <img className="skill-icon" alt="Jupyter" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jupyter/jupyter-original.svg" />
+                </li>
+                <li>
+                  Docker
+                  <img className="skill-icon" alt="Docker" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" />
                 </li>
               </ul>
             </div>
