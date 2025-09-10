@@ -103,12 +103,8 @@ function App() {
                   <img className="skill-icon" alt="Python" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" />
                 </li>
                 <li>
-                  C
-                  <img className="skill-icon" alt="C" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/c/c-original.svg" />
-                </li>
-                <li>
-                  Java
-                  <img className="skill-icon" alt="Java" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" />
+                  C++
+                  <img className="skill-icon" alt="C++" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg" />
                 </li>
                 <li>
                   JavaScript
@@ -117,14 +113,6 @@ function App() {
                 <li>
                   HTML/CSS
                   <img className="skill-icon" alt="HTML5" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" />
-                </li>
-                <li>
-                  Swift
-                  <img className="skill-icon" alt="Swift" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/swift/swift-original.svg" />
-                </li>
-                <li>
-                  C#
-                  <img className="skill-icon" alt="C#" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/csharp/csharp-original.svg" />
                 </li>
               </ul>
             </div>
@@ -137,20 +125,24 @@ function App() {
                   <img className="skill-icon" alt="React" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" />
                 </li>
                 <li>
-                  React Native
-                  <img className="skill-icon" alt="React Native" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" />
-                </li>
-                <li>
-                  SwiftUI
-                  <img className="skill-icon" alt="Swift" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/swift/swift-original.svg" />
-                </li>
-                <li>
-                  Node.js
-                  <img className="skill-icon" alt="Node.js" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" />
+                  Vite
+                  <img className="skill-icon" alt="Vite" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vite/vite-original.svg" />
                 </li>
                 <li>
                   TailwindCSS
-                  <img className="skill-icon" alt="TailwindCSS" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-plain.svg" />
+                  <img className="skill-icon" alt="TailwindCSS" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg" />
+                </li>
+                <li>
+                  Flask
+                  <img className="skill-icon" alt="Flask" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flask/flask-original.svg" />
+                </li>
+                <li>
+                  PyTorch
+                  <img className="skill-icon" alt="PyTorch" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pytorch/pytorch-original.svg" />
+                </li>
+                <li>
+                  TensorFlow
+                  <img className="skill-icon" alt="TensorFlow" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tensorflow/tensorflow-original.svg" />
                 </li>
               </ul>
             </div>
@@ -167,16 +159,12 @@ function App() {
                   <img className="skill-icon" alt="GitHub" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" />
                 </li>
                 <li>
-                  VS Code
-                  <img className="skill-icon" alt="VS Code" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg" />
+                  Cursor
+                  <img className="skill-icon" alt="Cursor" src="/cursor.png" />
                 </li>
                 <li>
                   Jupyter
                   <img className="skill-icon" alt="Jupyter" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jupyter/jupyter-original.svg" />
-                </li>
-                <li>
-                  PyCharm
-                  <img className="skill-icon" alt="PyCharm" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pycharm/pycharm-original.svg" />
                 </li>
               </ul>
             </div>
