@@ -70,7 +70,7 @@ function App() {
               </div>
             </div>
             <div className="about-text">
-              <h2>Raiden Makoto</h2>
+              <h2>Hi, I'm Raiden Makoto</h2>
               <p>{import.meta.env.VITE_EDUCATION}</p>
               <p>{import.meta.env.VITE_HOBBIES}</p>
             </div>
@@ -94,7 +94,93 @@ function App() {
 
         <section id="skills" className="content-section">
           <h1>Skills</h1>
-          <p>This is the contact section. Add your contact information and ways to reach you here.</p>
+          <div className="skills-grid">
+            <div className="skill-card">
+              <h3>Languages</h3>
+              <ul>
+                <li>
+                  Python
+                  <img className="skill-icon" alt="Python" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" />
+                </li>
+                <li>
+                  C
+                  <img className="skill-icon" alt="C" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/c/c-original.svg" />
+                </li>
+                <li>
+                  Java
+                  <img className="skill-icon" alt="Java" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" />
+                </li>
+                <li>
+                  JavaScript
+                  <img className="skill-icon" alt="JavaScript" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" />
+                </li>
+                <li>
+                  HTML/CSS
+                  <img className="skill-icon" alt="HTML5" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" />
+                </li>
+                <li>
+                  Swift
+                  <img className="skill-icon" alt="Swift" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/swift/swift-original.svg" />
+                </li>
+                <li>
+                  C#
+                  <img className="skill-icon" alt="C#" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/csharp/csharp-original.svg" />
+                </li>
+              </ul>
+            </div>
+
+            <div className="skill-card">
+              <h3>Frameworks</h3>
+              <ul>
+                <li>
+                  React JS
+                  <img className="skill-icon" alt="React" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" />
+                </li>
+                <li>
+                  React Native
+                  <img className="skill-icon" alt="React Native" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" />
+                </li>
+                <li>
+                  SwiftUI
+                  <img className="skill-icon" alt="Swift" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/swift/swift-original.svg" />
+                </li>
+                <li>
+                  Node.js
+                  <img className="skill-icon" alt="Node.js" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" />
+                </li>
+                <li>
+                  TailwindCSS
+                  <img className="skill-icon" alt="TailwindCSS" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-plain.svg" />
+                </li>
+              </ul>
+            </div>
+
+            <div className="skill-card">
+              <h3>Developer Tools</h3>
+              <ul>
+                <li>
+                  Git
+                  <img className="skill-icon" alt="Git" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" />
+                </li>
+                <li>
+                  GitHub
+                  <img className="skill-icon" alt="GitHub" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" />
+                </li>
+                <li>
+                  VS Code
+                  <img className="skill-icon" alt="VS Code" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg" />
+                </li>
+                <li>
+                  Jupyter
+                  <img className="skill-icon" alt="Jupyter" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jupyter/jupyter-original.svg" />
+                </li>
+                <li>
+                  PyCharm
+                  <img className="skill-icon" alt="PyCharm" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pycharm/pycharm-original.svg" />
+                </li>
+              </ul>
+            </div>
+          </div>
         </section>
         <br/>
 
