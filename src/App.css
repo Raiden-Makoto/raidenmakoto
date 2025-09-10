@@ -206,13 +206,19 @@
   color: #a878cc !important;
   font-size: 1.8rem;
   font-weight: 300;
-  margin-bottom: 1rem;
+  margin: 0 0 1rem 0;
+  line-height: 1.2;
 }
 
 .about-text p {
-  margin-bottom: 1rem;
-  font-size: 1.1rem;
-  line-height: 1.7;
+  margin: 0 0 1rem 0 !important;
+  font-size: 1.1rem !important;
+  line-height: 1.7 !important;
+  text-align: left !important;
+  padding: 0 !important;
+  color: inherit !important;
+  max-width: none !important;
+  font-weight: inherit !important;
 }
 
 .content-section h1 {
@@ -253,6 +259,7 @@
 .content-section p {
   margin: 0;
   padding: 0;
+  text-align: left;
 }
 
 #home {
