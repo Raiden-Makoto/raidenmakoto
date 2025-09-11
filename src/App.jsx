@@ -4,6 +4,7 @@ import './App.css'
 function App() {
   const [sidebarOpen, setSidebarOpen] = useState(false)
   const [currentProject, setCurrentProject] = useState(0)
+  const [isTransitioning, setIsTransitioning] = useState(false)
   const scannedPdfs = Object.entries(
     import.meta.glob('./assets/pubs/*.pdf', { eager: true, query: '?url', import: 'default' })
   ).map(([path, url]) => {
@@ -71,11 +72,21 @@ function App() {
   }, [projects.length])
 
   const nextProject = () => {
-    setCurrentProject((prev) => (prev + 1) % projects.length)
+    if (isTransitioning) return
+    setIsTransitioning(true)
+    setTimeout(() => {
+      setCurrentProject((prev) => (prev + 1) % projects.length)
+      setTimeout(() => setIsTransitioning(false), 50)
+    }, 250)
   }
 
   const prevProject = () => {
-    setCurrentProject((prev) => (prev - 1 + projects.length) % projects.length)
+    if (isTransitioning) return
+    setIsTransitioning(true)
+    setTimeout(() => {
+      setCurrentProject((prev) => (prev - 1 + projects.length) % projects.length)
+      setTimeout(() => setIsTransitioning(false), 50)
+    }, 250)
   }
 
   const scrollToSection = (sectionId) => {
@@ -160,7 +171,7 @@ function App() {
               </svg>
             </button>
             
-            <div className="carousel-content">
+            <div className={`carousel-content fade-transition ${isTransitioning ? 'fade-out' : 'fade-in'}`}>
               <div className="project-card">
                 {currentProject === 0 && (
                   <div className="hackathon-badge">

@@ -487,6 +487,20 @@
 .carousel-content {
   flex: 1;
   max-width: 900px;
+  position: relative;
+  overflow: hidden;
+}
+
+.carousel-content.fade-transition {
+  transition: opacity 0.5s ease-in-out;
+}
+
+.carousel-content.fade-out {
+  opacity: 0;
+}
+
+.carousel-content.fade-in {
+  opacity: 1;
 }
 
 .project-card {
