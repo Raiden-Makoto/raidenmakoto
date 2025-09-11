@@ -531,6 +531,16 @@
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
+.project-card a {
+  display: block;
+  text-decoration: none;
+  transition: opacity 0.3s ease;
+}
+
+.project-card a:hover {
+  opacity: 0.9;
+}
+
 .project-info {
   padding: 2.5rem;
   background: rgba(0, 0, 0, 0.1);

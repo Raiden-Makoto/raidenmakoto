@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import './App.css'
 
 function App() {
@@ -28,21 +28,33 @@ function App() {
       title: "Bin Buddy",
       description: "AI-powered waste classification system that helps users properly sort their trash using computer vision and machine learning.",
       technologies: ["Python", "React", "PostgreSQL", "Vite"],
-      image: "https://via.placeholder.com/400x300/1a1a2e/ffffff?text=Bin+Buddy"
+      image: "https://via.placeholder.com/400x300/1a1a2e/ffffff?text=Bin+Buddy",
+      githubUrl: "https://github.com/raidenmakoto/bin-buddy"
     },
     {
       title: "Quantum Error Correction",
       description: "Research project on quantum error correction algorithms using Python and Qiskit for fault-tolerant quantum computing.",
       technologies: ["Python", "Qiskit", "Quantum Computing"],
-      image: "https://via.placeholder.com/400x300/16213e/ffffff?text=Quantum+Research"
+      image: "https://via.placeholder.com/400x300/16213e/ffffff?text=Quantum+Research",
+      githubUrl: "https://github.com/raidenmakoto/quantum-error-correction"
     },
     {
       title: "Machine Learning Pipeline",
       description: "End-to-end ML pipeline for data processing and model training using PyTorch with Docker containerization.",
       technologies: ["Python", "PyTorch", "Docker", "Flask"],
-      image: "https://via.placeholder.com/400x300/0f3460/ffffff?text=ML+Pipeline"
+      image: "https://via.placeholder.com/400x300/0f3460/ffffff?text=ML+Pipeline",
+      githubUrl: "https://github.com/raidenmakoto/ml-pipeline"
     }
   ]
+
+  // Auto-cycle through projects every 30 seconds
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentProject((prev) => (prev + 1) % projects.length)
+    }, 30000) // 30 seconds
+
+    return () => clearInterval(interval)
+  }, [projects.length])
 
   const nextProject = () => {
     setCurrentProject((prev) => (prev + 1) % projects.length)
@@ -142,7 +154,9 @@ function App() {
                     <span>HACKATHON WINNER</span>
                   </div>
                 )}
-                <img src={projects[currentProject].image} alt={projects[currentProject].title} className="project-image" />
+                <a href={projects[currentProject].githubUrl} target="_blank" rel="noopener noreferrer">
+                  <img src={projects[currentProject].image} alt={projects[currentProject].title} className="project-image" />
+                </a>
                 <div className="project-info">
                   <h3>{projects[currentProject].title}</h3>
                   <div className="project-tech">
