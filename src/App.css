@@ -498,6 +498,9 @@
   border: 1px solid rgba(255, 255, 255, 0.1);
   transition: all 0.3s ease;
   position: relative;
+  height: 600px; /* Fixed height for consistent sizing */
+  display: flex;
+  flex-direction: column;
 }
 
 .hackathon-badge {
@@ -545,6 +548,10 @@
   padding: 2.5rem;
   background: rgba(0, 0, 0, 0.1);
   text-align: left;
+  flex: 1; /* Take up remaining space */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .project-info h3 {

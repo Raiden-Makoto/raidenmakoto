@@ -25,25 +25,39 @@ function App() {
   // Sample projects data
   const projects = [
     {
-      title: "Bin Buddy",
-      description: "AI-powered waste classification system that helps users properly sort their trash using computer vision and machine learning.",
-      technologies: ["Python", "React", "PostgreSQL", "Vite"],
-      image: "https://via.placeholder.com/400x300/1a1a2e/ffffff?text=Bin+Buddy",
-      githubUrl: "https://github.com/raidenmakoto/bin-buddy"
+      title: "QNetGAN (v3)",
+      description: "Hybrid Quantum-Classical Graph Generative Adversarial Network for Molecular Generation,",
+      technologies: ["PennyLane", "PyTorch"],
+      image: "funkymols.png",
+      githubUrl: "https://github.com/Raiden-Makoto/QWGraphGAN-GP"
     },
     {
-      title: "Quantum Error Correction",
-      description: "Research project on quantum error correction algorithms using Python and Qiskit for fault-tolerant quantum computing.",
-      technologies: ["Python", "Qiskit", "Quantum Computing"],
-      image: "https://via.placeholder.com/400x300/16213e/ffffff?text=Quantum+Research",
-      githubUrl: "https://github.com/raidenmakoto/quantum-error-correction"
+      title: "Wordle Solver",
+      description: "An entropy-based program that solves Wordle in an average of 3.8 guesses, with a 100\% success rate on 1534 past Wordles.",
+      technologies: ["Python", "Flask", "HTML/CSS"],
+      image: "wordlesolver.png",
+      githubUrl: "https://42cummer-entropywordlesolver.hf.space/"
     },
     {
-      title: "Machine Learning Pipeline",
-      description: "End-to-end ML pipeline for data processing and model training using PyTorch with Docker containerization.",
-      technologies: ["Python", "PyTorch", "Docker", "Flask"],
-      image: "https://via.placeholder.com/400x300/0f3460/ffffff?text=ML+Pipeline",
-      githubUrl: "https://github.com/raidenmakoto/ml-pipeline"
+      title: "WheresMyBus",
+      description: "Web application providing live Toronto Transit Commission (TTC) bus and streetcar departure times and vehicle tracking to help you plan your commute on the fly.",
+      technologies: ["JavaScript", "React", "HTML/CSS", "Flask", "Docker"],
+      image: "900express.png",
+      githubUrl: "https://wheresmybus.vercel.app/"
+    },
+    {
+      title: "Genshinfy.App",
+      description: "Pipeline to generate Genshin Impact-esque avatars from user images. Uses Facebook AI Similarity Search and Contrastive Language-Image Pretraining to determine the closest match (cosine similarity) and a VGG-19 model to apply the neural style transfer",
+      technologies: ["React", "JavaScript", "HTML/CSS", "TensorFlow"],
+      image: "genshinfy.png",
+      githubUrl: "https://github.com/Raiden-Makoto/genshinfy-app"
+    },
+    {
+      title: "Tetris",
+      description: "Implemented Tetris in MIPS Assembly. Gameplay (tetromino movement, rotation, line clearing) optimized for performance on a bitmap display. Features custom SFX and power-ups not found in the original version of the game.",
+      technologies: ["MIPS Assembly"],
+      image: "tetris.png",
+      githubUrl: "https://github.com/Raiden-Makoto/Tetris"
     }
   ]
 
@@ -90,7 +104,6 @@ function App() {
           <button className="sidebar-link" onClick={() => scrollToSection('projects')}>Projects</button>
           <button className="sidebar-link" onClick={() => scrollToSection('publications')}>Publications</button>
           <button className="sidebar-link" onClick={() => scrollToSection('skills')}>Skills</button>
-          <button className="sidebar-link" onClick={() => scrollToSection('misc')}>Misc</button>
         </nav>
              </div>
 
@@ -151,7 +164,17 @@ function App() {
               <div className="project-card">
                 {currentProject === 0 && (
                   <div className="hackathon-badge">
-                    <span>HACKATHON WINNER</span>
+                    <span>RESEARCH PROJECT</span>
+                  </div>
+                )}
+                {currentProject === 1 && (
+                  <div className="hackathon-badge">
+                    <span>DEPLOYED</span>
+                  </div>
+                )}
+                {currentProject === 2 && (
+                  <div className="hackathon-badge">
+                    <span>DEPLOYED</span>
                   </div>
                 )}
                 <a href={projects[currentProject].githubUrl} target="_blank" rel="noopener noreferrer">
@@ -285,15 +308,6 @@ function App() {
           </div>
         </section>
         <br/>
-
-        <section id="misc" className="content-section">
-          <h1>Misc</h1>
-          <p>This is the misc section. Add your misc information here.</p>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-        </section>
       </div>
     </>
   )
