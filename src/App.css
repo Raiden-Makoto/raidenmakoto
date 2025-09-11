@@ -450,3 +450,166 @@
 .read-the-docs {
   color: #888;
 }
+
+/* Carousel Styles - Glassmorphism Design */
+.carousel-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  margin: 2rem 0;
+  position: relative;
+  padding: 2rem 0;
+}
+
+.carousel-btn {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  color: white;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+.carousel-btn:hover {
+  background: rgba(168, 120, 204, 1);
+  transform: scale(1.1);
+  box-shadow: 0 12px 40px rgba(168, 120, 204, 0.4);
+}
+
+.carousel-content {
+  flex: 1;
+  max-width: 900px;
+}
+
+.project-card {
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.hackathon-badge {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  z-index: 10;
+  background: linear-gradient(135deg, #ffd700, #ff8c00);
+  border-radius: 20px;
+  padding: 0.5rem 1rem;
+  box-shadow: 0 4px 16px rgba(255, 215, 0, 0.3);
+}
+
+.hackathon-badge span {
+  color: black;
+  font-weight: 800;
+  font-size: 0.8rem;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.5);
+}
+
+.project-image {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.project-info {
+  padding: 2.5rem;
+  background: rgba(0, 0, 0, 0.1);
+  text-align: left;
+}
+
+.project-info h3 {
+  color: white;
+  font-size: 2.2rem;
+  margin-bottom: 1.5rem;
+  font-weight: 700;
+  text-align: left;
+  letter-spacing: -0.02em;
+  padding: 0 !important;
+  margin-left: 0 !important;
+}
+
+.project-info p {
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 1.2rem;
+  line-height: 1.6;
+  margin-bottom: 2.5rem;
+  text-align: left;
+  font-weight: 400;
+  padding: 0 !important;
+  max-width: none !important;
+}
+
+.project-tech {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+  justify-content: flex-start;
+  margin-bottom: 1.5rem;
+}
+
+.tech-tag {
+  background: rgba(94, 59, 141, 0.8);
+  color: white;
+  padding: 0.4rem 1.2rem;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+}
+
+.tech-tag:hover {
+  background: rgba(94, 59, 141, 1);
+  transform: scale(1.05);
+}
+
+.carousel-indicators {
+  display: flex;
+  justify-content: center;
+  gap: 0.8rem;
+  margin-top: 2.5rem;
+}
+
+.indicator {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+}
+
+.indicator.active {
+  background: rgba(168, 120, 204, 0.8);
+  border-color: rgba(168, 120, 204, 1);
+  transform: scale(1.3);
+  box-shadow: 0 0 20px rgba(168, 120, 204, 0.5);
+}
+
+.indicator:hover {
+  border-color: rgba(255, 255, 255, 0.6);
+  background: rgba(255, 255, 255, 0.1);
+}

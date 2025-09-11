@@ -3,6 +3,7 @@ import './App.css'
 
 function App() {
   const [sidebarOpen, setSidebarOpen] = useState(false)
+  const [currentProject, setCurrentProject] = useState(0)
   const scannedPdfs = Object.entries(
     import.meta.glob('./assets/pubs/*.pdf', { eager: true, query: '?url', import: 'default' })
   ).map(([path, url]) => {
@@ -20,6 +21,36 @@ function App() {
 
   const [pdfFiles] = useState(sortedPdfs)
   const [activePdfUrl, setActivePdfUrl] = useState(sortedPdfs[0]?.url || '')
+
+  // Sample projects data
+  const projects = [
+    {
+      title: "Bin Buddy",
+      description: "AI-powered waste classification system that helps users properly sort their trash using computer vision and machine learning.",
+      technologies: ["Python", "React", "PostgreSQL", "Vite"],
+      image: "https://via.placeholder.com/400x300/1a1a2e/ffffff?text=Bin+Buddy"
+    },
+    {
+      title: "Quantum Error Correction",
+      description: "Research project on quantum error correction algorithms using Python and Qiskit for fault-tolerant quantum computing.",
+      technologies: ["Python", "Qiskit", "Quantum Computing"],
+      image: "https://via.placeholder.com/400x300/16213e/ffffff?text=Quantum+Research"
+    },
+    {
+      title: "Machine Learning Pipeline",
+      description: "End-to-end ML pipeline for data processing and model training using PyTorch with Docker containerization.",
+      technologies: ["Python", "PyTorch", "Docker", "Flask"],
+      image: "https://via.placeholder.com/400x300/0f3460/ffffff?text=ML+Pipeline"
+    }
+  ]
+
+  const nextProject = () => {
+    setCurrentProject((prev) => (prev + 1) % projects.length)
+  }
+
+  const prevProject = () => {
+    setCurrentProject((prev) => (prev - 1 + projects.length) % projects.length)
+  }
 
   const scrollToSection = (sectionId) => {
     const element = document.getElementById(sectionId);
@@ -97,8 +128,39 @@ function App() {
 
         <section id="projects" className="content-section">
           <h1>Projects</h1>
-          <p>Alpha beta charlie foxtrot lima</p>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+          <div className="carousel-container">
+            <button className="carousel-btn prev" onClick={prevProject}>
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                <polyline points="15,18 9,12 15,6"></polyline>
+              </svg>
+            </button>
+            
+            <div className="carousel-content">
+              <div className="project-card">
+                {currentProject === 0 && (
+                  <div className="hackathon-badge">
+                    <span>HACKATHON WINNER</span>
+                  </div>
+                )}
+                <img src={projects[currentProject].image} alt={projects[currentProject].title} className="project-image" />
+                <div className="project-info">
+                  <h3>{projects[currentProject].title}</h3>
+                  <div className="project-tech">
+                    {projects[currentProject].technologies.map((tech, index) => (
+                      <span key={index} className="tech-tag">{tech}</span>
+                    ))}
+                  </div>
+                  <p>{projects[currentProject].description}</p>
+                </div>
+              </div>
+            </div>
+            
+            <button className="carousel-btn next" onClick={nextProject}>
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                <polyline points="9,18 15,12 9,6"></polyline>
+              </svg>
+            </button>
+          </div>
         </section>
         <br/>
 
