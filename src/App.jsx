@@ -128,7 +128,7 @@ function App() {
                 <line x1="3" y1="18" x2="21" y2="18"></line>
               </svg>
             </button>
-            <h2>Raiden Makoto</h2>
+            <h2>Max Cui</h2>
           </div>
           <div className="social-icons">
             <a href={import.meta.env.VITE_LINKEDIN_URL || '#'} target="_blank" rel="noopener noreferrer" className="social-icon">
@@ -150,11 +150,11 @@ function App() {
           <div className="about-content">
             <div className="about-image">
               <div className="circular-frame">
-                <img src="/raiden.webp" alt="Profile" />
+                <img src="/headshot.png" alt="Profile" />
               </div>
             </div>
             <div className="about-text">
-              <h2>Hi, I'm Raiden Makoto</h2>
+              <h2>Hi, I'm Max</h2>
               <p>{import.meta.env.VITE_EDUCATION}</p>
               <p>{import.meta.env.VITE_HOBBIES}</p>
             </div>
