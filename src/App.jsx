@@ -47,11 +47,11 @@ function App() {
       githubUrl: "https://wheresmybus.vercel.app/"
     },
     {
-      title: "Genshinfy.App",
-      description: "Pipeline to generate Genshin Impact-esque avatars from user images. Uses Facebook AI Similarity Search and Contrastive Language-Image Pretraining to determine the closest match (cosine similarity) and a VGG-19 model to apply the neural style transfer",
-      technologies: ["React", "JavaScript", "HTML/CSS", "TensorFlow"],
+      title: "Genshinfy V2",
+      description: "AI-powered style transfer tools for generating an anime-style avatar of your face from Genshin Impact character references. You can also just generte avatars based on which ever character you want.",
+      technologies: ["Transformers", "Gradio", "PyTorch", "Diffusers", "DinoVision"],
       image: "genshinfy.png",
-      githubUrl: "https://github.com/Raiden-Makoto/genshinfy-app"
+      githubUrl: "https://42cummer-genshinfyv2.hf.space/"
     },
     {
       title: "Tetris",
@@ -59,6 +59,13 @@ function App() {
       technologies: ["MIPS Assembly"],
       image: "tetris.png",
       githubUrl: "https://github.com/Raiden-Makoto/Tetris"
+    },
+    {
+      title: "SoundofMusic",
+      description: "Pipeline to generate lyrics and matching melody and harmony for pop songs in the style of Taylor Swift.",
+      technologies: ["Transformers", "PyTorch", "PyQT", "Music21"],
+      image: "soundofmusic.png",
+      githubUrl: "https://github.com/Raiden-Makoto/SoundOfMusic"
     }
   ]
 
@@ -188,6 +195,16 @@ function App() {
                     <span>DEPLOYED</span>
                   </div>
                 )}
+                {currentProject === 3 && (
+                  <div className="hackathon-badge">
+                    <span>DEPLOYED</span>
+                  </div>
+                )}
+                {currentProject === 5 && (
+                  <div className="hackathon-badge in-progress">
+                    <span>IN PROGRESS</span>
+                  </div>
+                )}
                 <a href={projects[currentProject].githubUrl} target="_blank" rel="noopener noreferrer">
                   <img src={projects[currentProject].image} alt={projects[currentProject].title} className="project-image" />
                 </a>
@@ -257,6 +274,10 @@ function App() {
                 <li>
                   HTML/CSS
                   <img className="skill-icon" alt="HTML5" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" />
+                </li>
+                <li>
+                  SQL
+                  <img className="skill-icon" alt="SQL" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" />
                 </li>
               </ul>
             </div>

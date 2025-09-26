@@ -512,7 +512,7 @@
   border: 1px solid rgba(255, 255, 255, 0.1);
   transition: all 0.3s ease;
   position: relative;
-  height: 600px; /* Fixed height for consistent sizing */
+  min-height: 700px; /* Minimum height, can grow for longer content */
   display: flex;
   flex-direction: column;
 }
@@ -534,6 +534,15 @@
   font-size: 0.8rem;
   letter-spacing: 0.5px;
   text-transform: uppercase;
+}
+
+.hackathon-badge.in-progress {
+  background: linear-gradient(135deg, #00bfff, #0080ff);
+  box-shadow: 0 4px 16px rgba(0, 191, 255, 0.3);
+}
+
+.hackathon-badge.in-progress span {
+  color: white;
 }
 
 .project-card:hover {
