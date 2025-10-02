@@ -202,7 +202,7 @@ function App() {
                 )}
                 {currentProject === 5 && (
                   <div className="hackathon-badge in-progress">
-                    <span>IN PROGRESS</span>
+                    <span>DEPLOYED</span>
                   </div>
                 )}
                 <a href={projects[currentProject].githubUrl} target="_blank" rel="noopener noreferrer">
