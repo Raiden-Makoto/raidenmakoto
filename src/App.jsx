@@ -66,6 +66,13 @@ function App() {
       technologies: ["Transformers", "PyTorch", "PyQT", "Music21"],
       image: "soundofmusic.png",
       githubUrl: "https://github.com/Raiden-Makoto/SoundOfMusic"
+    },
+    {
+      title: "67",
+      description: "A Chrome Extension that overlays subway surfers gameplay similar to TikTok/IG split screen. This project aims to increase ADHD attention in Gen-Z. For more information, see the GitHub repo.",
+      technologies: ["HTML/CSS", "JavaScript"],
+      image: "67.png",
+      githubUrl: "https://github.com/Raiden-Makoto/67GoonCornerSybau"
     }
   ]
 
@@ -203,6 +210,11 @@ function App() {
                 {currentProject === 5 && (
                   <div className="hackathon-badge in-progress">
                     <span>DEPLOYED</span>
+                  </div>
+                )}
+                {currentProject === 6 && (
+                  <div className="hackathon-badge">
+                    <span>Hackathon Project</span>
                   </div>
                 )}
                 <a href={projects[currentProject].githubUrl} target="_blank" rel="noopener noreferrer">
