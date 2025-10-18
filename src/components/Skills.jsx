@@ -56,6 +56,10 @@ function Skills() {
               TensorFlow
               <img className="skill-icon" alt="TensorFlow" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tensorflow/tensorflow-original.svg" />
             </li>
+            <li>
+              MLX
+              <img className="skill-icon" alt="MLX" src="https://raw.githubusercontent.com/ml-explore/mlx/main/docs/source/_static/mlx_logo.png" />
+            </li>
           </ul>
         </div>
 
