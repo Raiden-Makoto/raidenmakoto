@@ -52,15 +52,15 @@ export const projects = [
     deployed: false
   },
   {
-    title: "Multi-Conditional Graph Variational Autoencoder",
-    description: `This project implements a Conditional Graph Variational Autoencoder 
-    (CGVAE) for generating molecular structures with desired properties. 
-    The specific application is designing molecules with controlled 
-    blood-brain barrier (BBB) permeability - a critical factor in 
-    developing drugs that target the central nervous system.
-    Optimized for Apple Silicon using MLX and MLX Graphs.`,
+    title: "SELFIES Variational Autoencoder",
+    description: `This project implements a Variational Autoencoder 
+    for generating novel molecules in SELFIES string representation.
+    The model is trained on a portion of the QM9 dataset with qualities most
+    similar to CNS (central nervous system) targeting drugs.
+    Optimized for Apple Silicon using MLX and MLX Graphs.
+    Model achieves on average a 70% validity rate in generated molecules.`, 
     technologies: ["MLX", "MLX Graphs", "Python"],
-    image: "molvae.png",
+    image: "mlxvae.png",
     githubUrl: "https://github.com/Raiden-Makoto/MLX-GVAE",
     deployed: false
   },

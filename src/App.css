@@ -296,6 +296,17 @@
   margin-left: 0.75rem;
 }
 
+.mlx-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #ff6b6b, #4ecdc4);
+  color: white;
+  font-weight: bold;
+  font-size: 10px;
+  border-radius: 4px;
+}
+
 /* PDF viewer */
 .pdf-viewer {
   display: grid;

@@ -58,7 +58,7 @@ function Skills() {
             </li>
             <li>
               MLX
-              <img className="skill-icon" alt="MLX" src="https://raw.githubusercontent.com/ml-explore/mlx/main/docs/source/_static/mlx_logo.png" />
+              <span className="skill-icon mlx-icon">MLX</span>
             </li>
           </ul>
         </div>
